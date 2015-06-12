@@ -1,38 +1,52 @@
-# Tink skeleton Angular directive
+# A-Welzijn Filters
 
-v1.0.0
+v1.0.1
 
-## What is this repository for?
+### Datum filter
 
-The Tink Angular skeleton provides a scaffold for a directive or service that can easily work with Tink.
+```html
+<p>{{ctrl.vandaag | datum}}</p>
+```
+Deze filter gaat de datum omzetten in *gisteren*, *vandaag*, *morgen* of gaat de volgende notatie gebruiken: **22 feb 15**.
 
-Tink is an in-house developed easy-to-use front end framework for quick prototyping and simple deployment of all kinds of websites and apps, keeping a uniform and consistent look and feel.
+### ToTrusted filter
 
-## Setup
+```html
+<p>{{ctrl.html | to_trusted}}</p>
+```
+Deze filter wordt gebruikt om gecompileerde HTML code weer te geven.
 
-### Prerequisites
+### Geslacht filter
 
-* nodeJS [http://nodejs.org/download/](http://nodejs.org/download/)
-* bower: `npm install -g bower`
+```html
+<p>{{ctrl.geslachtcode | geslacht}}</p>
+```
+Deze filter gaat een geslachtcode (m/v) omzetten naar *Man* of *Vrouw*.
 
-### Install
+### INSZ filter
 
-1. Go to the root of your project and type the following command in your terminal:
-   `bower install tink-back-to-top-angular --save`
+```html
+<p>{{ctrl.insznummer | insz}}</p>
+```
+Deze filter gaat een rijksregisternummer in de volgende notatie weergeven: **12.34.56-789.01**.
 
-2. Include `dist/tink-back-to-top-angular.js` and its necessary dependencies in your project.
+### Leeftijd filter
 
-3. On http://tink.digipolis.be you will find all necessary documentation.
+```html
+<p>{{ctrl.geboortedatum | leeftijd}}</p>
+```
+Deze filter gaat een geboortedatum omzetten naar de leeftijd.
 
-## Contribution guidelines
+### Capitalize filter
 
-* If you're not sure, drop us a note
-* Fork this repo
-* Do your thing
-* Create a pull request
+```html
+<p>{{ctrl.naam | capitalize}}</p>
+```
+Deze filter gaat elke eerste letter van elk woord van een string naar een hoofdletter omzetten.
 
-## Who do I talk to?
+### Verwijder Whitespace filter
 
-* Jasper Van Proeyen - jasper.vanproeyen@digipolis.be - Lead front-end
-* Tom Wuyts - tom.wuyts@digipolis.be - Lead UX
-* [The hand](https://www.youtube.com/watch?v=_O-QqC9yM28)
+```html
+<p>{{ctrl.whatever | nowhitespace}}</p>
+```
+Deze filter gaat de alle spaties van een string weghalen.
