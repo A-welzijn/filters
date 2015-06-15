@@ -1,7 +1,7 @@
 {
   "name": "awelzijn-filters",
   "description": "Tink skeleton Angular directive",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:A-welzijn/filters.git"
