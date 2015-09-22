@@ -63,3 +63,11 @@ Deze filter gaat elke eerste letter van elk woord van een string naar een hoofdl
 <p>{{ctrl.whatever | nowhitespace}}</p>
 ```
 Deze filter gaat de alle spaties van een string weghalen.
+
+#### Append/prepend text filter
+
+```html
+<p>{{ctrl.whatever | append:'...'}}</p>
+<p>{{ctrl.whatever | prepend:'...'}}</p>
+```
+Deze filter gaat text aan een bepaalde input gaan bijvoegen

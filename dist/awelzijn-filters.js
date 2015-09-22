@@ -5,6 +5,28 @@
 	} catch (e) {
 		module = angular.module('awelzijn.filters', []);
 	}
+	module.filter('append', [function () {
+		return function (input, appendWith) {
+			if (input) {
+				return input + appendWith
+			}
+		};
+	}]);
+	module.filter('prepend', [function () {
+		return function (input, prependWith) {
+			if (input) {
+				return prependWith + input
+			}
+		};
+	}]);
+})();
+;'use strict';
+(function (module) {
+	try {
+		module = angular.module('awelzijn.filters');
+	} catch (e) {
+		module = angular.module('awelzijn.filters', []);
+	}
 	module.filter('capitalize', [function () {
 		return function (origineleNaam) {
 		if (origineleNaam && origineleNaam !== '-') {
@@ -48,6 +70,28 @@
       }
     };
   }]);
+})();
+;'use strict';
+(function (module) {
+	try {
+		module = angular.module('awelzijn.filters');
+	} catch (e) {
+		module = angular.module('awelzijn.filters', []);
+	}
+	module.filter('decodeHtml', [function () {
+		return function (html, limit) {
+			var decoded = html.replace(/<[^>]+>/gm, '').replace(/&nbsp;/gm, ' ');
+			var decodedSubstring = decoded;
+			if (limit) {
+				decodedSubstring = decoded.substring(0, limit);
+				if (decoded.length > limit) {
+					decodedSubstring += "...";
+				}
+			}
+
+			return decodedSubstring;
+		};
+	}]);
 })();
 ;'use strict';
 (function (module) {
@@ -129,5 +173,23 @@
 				return $sce.trustAsHtml(text);
 			};
   }]);
+})();
+;'use strict';
+(function (module) {
+	try {
+		module = angular.module('awelzijn.filters');
+	} catch (e) {
+		module = angular.module('awelzijn.filters', []);
+	}
+	module.filter('vestiging', [function () {
+		return function (vestigingsNummer) {
+			if (vestigingsNummer == '0') {
+				return 'Hoofdvestiging';
+			}
+			else {
+				return vestigingsNummer;
+			}
+		};
+	}]);
 })();
 ;
